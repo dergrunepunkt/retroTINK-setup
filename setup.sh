@@ -33,7 +33,7 @@ DIALOG_INTERNET=${DIALOG=dialog}
 #Using Duck Duck Go instead of Google to improve on the privacy side.
 URL_CHECK="http://duckduckgo.com"
 
-wget -q --tries=10 --timeout=20 --spider $URL
+wget -q --tries=10 --timeout=20 --spider $URL_CHECK
 if [[ $? -ne 0 ]]; then
    $DIALOG_INTERNET --title  "No Internet Access!" --clear \
    --msgbox "\n\nPlease connect the Raspberry Pi to the Internet, required to continue setting up RetroTINK..." 11 40
