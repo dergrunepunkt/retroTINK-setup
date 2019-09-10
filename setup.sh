@@ -54,9 +54,8 @@ chown pi:pi -R /home/pi/RetroPie/savestates
 
 
 #  Copy systems config
-chmod 644 ./es_systems.cfg
 chown pi:pi ./es_systems.cfg
-cp ./es_systems.cfg /etc/emulationstation/
+cp other-configs/es_systems.cfg /etc/emulationstation/
 
 # Copy Runcommands
 cd opt-retropie-configs-all
@@ -97,7 +96,7 @@ fi
 grep 'SaveStates' /etc/samba/smb.conf 2>&1 > /dev/null ||
 	echo ./other-configs/samba.cfg >> /etc/samba/smb.conf
 
-cp -f ./config.txt /boot/config.txt
+cp -f other-configs/config.txt /boot/config.txt
 if [[ $? -ne 0 ]]; then
    echo "Error: Could not copy CONFIG.TXT!"
    exit 1
@@ -132,8 +131,8 @@ Stopped_Install (){
 
 # Script has Internet and Root access.  Good to go!
 Main_Program (){
-$DIALOG --title " RetroTINK Installation Script" --clear \
-        --yesno "\nThis program will install the needed files & modify some settings to enable the use of the RetroTINK Raspberry Pi HAT with RetroPie (versions 4.3 and above)\n\nWARNING: This script should be run on a fresh installation of RetroPie and may not function properly or at all if changes have been made.\n\nContinue installation?" 20 40
+$DIALOG --title " RetroTINK Ultimate Installation Script" --clear \
+        --yesno "\nThis program will install the needed files & modify some settings to enable the use of the RetroTINK Ultimate Raspberry Pi HAT with RetroPie (versions 4.3 and above)\n\nWARNING: This script should be run on a fresh installation of RetroPie and may not function properly or at all if changes have been made.\n\nContinue installation?" 20 40
 case $? in
   0)
     Continue_Install;;
