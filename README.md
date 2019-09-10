@@ -1,4 +1,13 @@
-NOTE: Confirmed working on RetroPie v4.3 and v4.4!! :D
+# Important Read!!!
+This is a fork of https://github.com/Vykyan/retroTINK-setup.
+
+I forked Vykyan's work because it didn't wotk in any of my PVMs, RGB monitors or my CRT TV's as follows:
+
+1. Sony LMD-1410 LCD PVM
+2. Sony PVM-14M2U CRT PVM
+3. Sony CX-14CP1 RGB Monitor
+4. Sony 14" TV (model not available at the time)
+5. Phillips 29" CRT TV
 
 # retroTINK-setup (Should work for RGB-Pi users as well!)
 A Setup script to install RetroTINK configs on a fresh RetroPie v4.3+
