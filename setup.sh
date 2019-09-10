@@ -54,7 +54,7 @@ chown pi:pi -R /home/pi/RetroPie/savestates
 
 
 #  Copy systems config
-chown pi:pi ./es_systems.cfg
+chown pi:pi other-configs/es_systems.cfg
 cp other-configs/es_systems.cfg /etc/emulationstation/
 
 # Copy Runcommands
