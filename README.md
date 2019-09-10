@@ -15,7 +15,7 @@ Console/SSH into your fresh retropie install.
 
 Type/paste command (All one line)
 
-`sudo apt-get install wget git -y && cd /home/pi/ && git clone https://github.com/dergrunepunkt/retroTINK-setup.git && cd retroTINK-setup && chmod +x ./setup.sh && sudo ./setup.sh`
+`sudo apt-get install wget git -y && cd /home/pi/ && git clone -b dev https://github.com/dergrunepunkt/retroTINK-setup.git && cd retroTINK-setup && chmod +x ./setup.sh && sudo ./setup.sh`
 
 Follow Instructions. (Make sure to change emulationstation theme to "tft-retrotink" once back in Emulationstation after reboot!
 
