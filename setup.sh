@@ -36,7 +36,7 @@ URL_CHECK="http://duckduckgo.com"
 wget -q --tries=10 --timeout=20 --spider $URL_CHECK
 if [[ $? -ne 0 ]]; then
    $DIALOG_INTERNET --title  "No Internet Access!" --clear \
-   --msgbox "\n\nPlease connect the Raspberry Pi to the Internet, required to continue setting up RetroTINK..." 11 40
+   --msgbox "\n\nPlease connect the Raspberry Pi to the Internet, required to continue setting up RetroTINK Ultimate..." 11 40
    exit 1
 fi
 }
@@ -105,7 +105,7 @@ fi
 CURRENTDIR=$PWD
 cd ..
 rm -R $CURRENTDIR
-$DIALOG --title " RetroTINK Installation Script" --clear \
+$DIALOG --title " RetroTINK Ultimate Installation Script" --clear \
         --yesno "\n\n Installation Complete!  Please reboot your Rasbperry Pi now to use your new RetroTINK enabled RetroPie!\n\nReboot now?" 20 40
 case $? in
   0)
