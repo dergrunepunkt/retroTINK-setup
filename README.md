@@ -1,7 +1,13 @@
 # Important Read!!!
 This is a fork of https://github.com/Vykyan/retroTINK-setup.
 
-I forked Vykyan's work because it didn't wotk in any of my PVMs, RGB monitors or my CRT TV's as follows:
+I forked Vykyan's work because it didn't wotk in any of my PVMs, RGB monitors or my CRT TV's.
+I had two problems as follows
+
+1. It constantly changed from 575i/50Hz at the menues to 480p/60Hz during gameplay.
+2. The image appeared in the center using 20% of the horizontal realstate.
+
+I tested this behaivour on the following equipment:
 
 1. Sony LMD-1410 LCD PVM
 2. Sony PVM-14M2U CRT PVM
