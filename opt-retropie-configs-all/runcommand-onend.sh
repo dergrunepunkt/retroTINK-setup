@@ -8,4 +8,3 @@ setEmulationStationVideoMode.sh
 
 clear
 
-exit 0

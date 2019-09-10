@@ -17,4 +17,3 @@ fbset -depth 32 && fbset -depth 32 -xres 450 -yres 270
 
 clear
 
-exit 0
