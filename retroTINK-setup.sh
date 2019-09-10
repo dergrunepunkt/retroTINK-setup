@@ -13,7 +13,7 @@
 
 # Check for Root Access
 
-killall emulationstation
+killall -15 emulationstation
 
 Check_Root (){
 DIALOG_ROOT=${DIALOG=dialog}
@@ -30,7 +30,10 @@ fi
 Check_Internet () {
 DIALOG_INTERNET=${DIALOG=dialog}
 
-wget -q --tries=10 --timeout=20 --spider http://www.google.com
+#Using Duck Duck Go instead of Google to improve on the privacy side.
+URL_CHECK="http://duckduckgo.com"
+
+wget -q --tries=10 --timeout=20 --spider $URL
 if [[ $? -ne 0 ]]; then
    $DIALOG_INTERNET --title  "No Internet Access!" --clear \
    --msgbox "\n\nPlease connect the Raspberry Pi to the Internet, required to continue setting up RetroTINK..." 11 40
@@ -91,26 +94,8 @@ if [[ $? -ne 0 ]]; then
 fi
 
 #Update Samba Shares
-echo '[SaveStates]' >> /etc/samba/smb.conf
-echo 'comment = pi' >> /etc/samba/smb.conf
-echo 'path = "/home/pi/RetroPie/savestates"' >> /etc/samba/smb.conf
-echo 'writeable = yes' >> /etc/samba/smb.conf
-echo 'guest ok = yes' >> /etc/samba/smb.conf
-echo 'create mask = 0644' >> /etc/samba/smb.conf
-echo 'directory mask = 0755' >> /etc/samba/smb.conf
-echo 'force user = pi' >> /etc/samba/smb.conf
-echo 'follow symlinks = yes' >> /etc/samba/smb.conf
-echo 'wide links = yes' >> /etc/samba/smb.conf
-echo '[SaveFiles]' >> /etc/samba/smb.conf
-echo 'comment = pi' >> /etc/samba/smb.conf
-echo 'path = "/home/pi/RetroPie/savefiles"' >> /etc/samba/smb.conf
-echo 'writeable = yes' >> /etc/samba/smb.conf
-echo 'guest ok = yes' >> /etc/samba/smb.conf
-echo 'create mask = 0644' >> /etc/samba/smb.conf
-echo 'directory mask = 0755' >> /etc/samba/smb.conf
-echo 'force user = pi' >> /etc/samba/smb.conf
-echo 'follow symlinks = yes' >> /etc/samba/smb.conf
-echo 'wide links = yes' >> /etc/samba/smb.conf
+grep 'SaveStates' /etc/samba/smb.conf 2>&1 > /dev/null ||
+	echo ./other-configs/samba.cfg >> /etc/samba/smb.conf
 
 cp -f ./config.txt /boot/config.txt
 if [[ $? -ne 0 ]]; then
