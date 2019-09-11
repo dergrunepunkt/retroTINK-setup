@@ -110,8 +110,6 @@ case $? in
 	  cd ..
 	  CURRENTDIR=$PWD
 	  rm -R $CURRENTDIR;;
-  1)
-    exit 0;;
   255)
     exit 0;;
 esac
