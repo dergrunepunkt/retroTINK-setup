@@ -101,11 +101,23 @@ if [[ $? -ne 0 ]]; then
    echo "Error: Could not copy CONFIG.TXT!"
    exit 1
 fi
-CURRENTDIR=$PWD
-cd ..
-rm -R $CURRENTDIR
+
 $DIALOG --title " RetroTINK Ultimate Installation Script" --clear \
-        --yesno "\n\n Installation Complete!  Please reboot your Rasbperry Pi now to use your new RetroTINK enabled RetroPie!\n\nReboot now?" 20 40
+        --yesno "\n\n Installation Complete!  \n\nDo you want to remove the installtion files?" 20 40
+case $? in
+  0)
+	  cd ..
+	  CURRENTDIR=$PWD
+	  rm -R $CURRENTDIR
+  1)
+    exit 0;;
+  255)
+    exit 0;;
+esac
+
+
+$DIALOG --title " RetroTINK Ultimate Installation Script" --clear \
+        --yesno "\n\n Please reboot your Rasbperry Pi now to use your new RetroTINK enabled RetroPie!\n\nReboot now?" 20 40
 case $? in
   0)
     sync;sync;reboot;;
