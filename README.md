@@ -43,3 +43,8 @@ atari2600,atari5200,atari7800,atarilynx,fba,fds,gamegear,gb,gba,gbc,genesis/mega
 # Currently supported OTHER emulators/ports:
 
 advmame (relies of advmame inbuilt support for changing resolutions),doom,quake
+
+
+# ToDo
+
+* Change console font
