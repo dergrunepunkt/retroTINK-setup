@@ -104,11 +104,12 @@ fi
 
 $DIALOG --title " RetroTINK Ultimate Installation Script" --clear \
         --yesno "\n\n Installation Complete!  \n\nDo you want to remove the installtion files?" 20 40
+
 case $? in
   0)
 	  cd ..
 	  CURRENTDIR=$PWD
-	  rm -R $CURRENTDIR
+	  rm -R $CURRENTDIR;;
   1)
     exit 0;;
   255)
